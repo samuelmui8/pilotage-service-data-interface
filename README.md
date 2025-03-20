@@ -20,5 +20,6 @@ npm run dev
 4. Open the application in your browser at `http://localhost:5173/`
 
 ## Design Decisions
-- Split pilotage data into multiple tables based on their trip so that drivers can easily find the data they need.
-- Display only the top row of each table as this will be updated with the latest data. We do not need the previous rows as they contain outdated data.
+- Assumption: The date of the arrival, pilot board time, start time, end time will be the same as the service request date. Hence, I only display the time for each column in the table, so that drivers can easily see the time of each event.
+- Split pilotage data into multiple tables based on their trip so that drivers can easily find the data they need, with the latest trip displayed at the top.
+- Display only the top row of each table as this will be updated with the latest data. We do not need the previous rows as they contain repeated outdated data. The snapshot time is displayed at the bottom of each table to indicate when the data was last updated.
