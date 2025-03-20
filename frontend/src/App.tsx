@@ -3,7 +3,7 @@ import axios from "axios";
 import { Card, Input, Button } from "@mui/material";
 import { PilotageData } from "./types";
 import { groupDataByFromAndTo, validateIMO } from "./utils";
-import Subtable from "./components/Subtable";
+import Table from "./components/Table";
 
 const App: React.FC = () => {
   const [imo, setImo] = useState("");
@@ -75,11 +75,11 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            {/* Render subtables */}
+            {/* Render Tables */}
             {Array.from(groupedData.entries()).map(([key, groupData]) => {
               const [from, to] = key.split("-");
               return (
-                <Subtable key={key} from={from} to={to} data={groupData} />
+                <Table key={key} from={from} to={to} data={groupData} />
               );
             })}
           </Card>
